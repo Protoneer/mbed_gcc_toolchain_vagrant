@@ -1,28 +1,27 @@
 # mbed GCC Toolchain - Vagrant
 
 ## Introduction
-
-
-
-src folder contrains the code to be compiled.
-
+Vagrant is a tool for building virtual workspaces. Its main benifits is that work enviroments can be setup-once and destributed between users. Perfect for sharing complex Toolchains. This repository provides the `vagrantfile` that contains all the enviroment settings to create the virtual linux box that can compile mBed GCC projects.
 
 ## Requirements
-* Vagrant 
-* Virtualbox
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Install
+All that is need to create the virtual box is to run `vagrant up` in the folder containing the `vagrantfile`
+
 After the installation has been done the a SSH port will be opened on the local host with the following details.
 * SSH 127.0.0.1:2222
 * Username : vagrant
 * Password : vagrant
 
-Shared folder:
-On the Linux box fodler /vagrant is the same as the host folder where the vagrant folder is located.
+A shared folder is also create:
+On the Linux box folder `/vagrant` is the same as the host folder where the `vagrantfile` is located.
 
 ## Usage
+* Download this repository to a local folder.
 * Export a project from the Online mBed IDE(GCC toolchain)
-* Extract the contents into the `src` folder 
+* Extract the contents of the export into the `src` folder 
 * SSH to the Vagrant box (SSH details above)(I use Putty for windows and SSH for Linux)
 * `cd /vagrant/src`
 * `make`
